@@ -1,6 +1,4 @@
-import sys
-sys.stdin = open('input.txt')
-notes = [2000, 1000, 500, 100, 50, 20, 10, 5, 2, 1]
+notes = [100, 50, 20, 10, 5, 3, 2, 1]
 
 
 def min_note(value, notes, cache=None):
@@ -11,8 +9,7 @@ def min_note(value, notes, cache=None):
     elif value in notes:
         cache[value] = [value]
         return [value]
-    elif min(notes) > value:
-        cache[value] = []
+    elif value == 0:
         return []
     else:
         min_configuration = []
@@ -25,5 +22,8 @@ def min_note(value, notes, cache=None):
     return cache[value]
 
 for _ in xrange(int(raw_input())):
-    value = int(raw_input())
-    print len(min_note(value, notes))
+    count = 0
+    x = raw_input()
+    for value in map(int, raw_input().split()):
+        count = count + len(min_note(value, notes))
+    print count
