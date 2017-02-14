@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-using namespace std; 
+using namespace std;
 struct node {
     int data;
     node *right;

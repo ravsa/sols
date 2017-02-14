@@ -1,14 +1,13 @@
 #include <iostream>
 #include <stack>
-using namespace std; 
+using namespace std;
 
-struct et 
+struct et
 {
     char value;
     et *right;
     et *left;
 };
-
 bool isopertor(char ch){
     if (ch == '+' || ch == '-' || ch == '/' || ch == '*' || ch == '^')
         return true;

@@ -1,13 +1,30 @@
-import random
-import sys
+hist = [1, 2, 4]  # , 1, 2, 9]
+
+_max = 0
+h, pos = None, None
+temph, tempp = None, None
+hstack = list()
+pstack = list()
 
 
-sys.stdout = open("input.txt", "w")
-T = 10
-print T
-while T:
-    T -= 1
-    N = random.randint(2, 9)
-    data = [str(random.randint(1, 500)) for _ in xrange(N)]
-    print N
-    print ' '.join(data)
+def pop():
+    global _max, temph, tempp, pos
+    temph = hstack.pop()
+    tempp = pstack.pop()
+    _max = max(_max, temph * (pos - tempp))
+
+
+for pos in range(len(hist)):
+    h = hist[pos]
+    if not hstack or h > hstack[-1]:
+        hstack.append(h)
+        pstack.append(pos)
+    elif h < hstack[-1]:
+        while hstack and h < hstack[-1]:
+            pop()
+        hstack.append(h)
+        pstack.append(tempp)
+while hstack:
+    pop()
+
+print _max

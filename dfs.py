@@ -136,6 +136,6 @@ l = [
     ('g', 'e', 17),
     ('g', 'c', 8),
 ]
-G = Graph(l, weighted=True)
-#  print G.dijkstra('a', 'f')
-print G.bellman_ford('a')
+G = Graph(g, weighted=False)
+print G.bfs_shortest_path('a', 'd')
+#  print G.bellman_ford('a')

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <queue>
-using namespace std; 
+using namespace std;
 struct node{
     int data;
     node *right;
@@ -20,7 +20,7 @@ node *insert(node *tree, int num){
             tree->left = insert(tree->left, num);
         else if (tree->data < num)
             tree->right = insert(tree->right, num);
-        else 
+        else
             cout << "Duplicate Element: " << num << endl;
     }
     return tree;

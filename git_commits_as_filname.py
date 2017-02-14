@@ -7,6 +7,8 @@ for _file_name in glob.glob("*"):
     files.append(_file_name)
 random.shuffle(files)
 files = zip(files[::2], files[1::2])
+start_date = 'sudo date +%Y%m%d -s "20161216"'
+os.system(start_date)
 for f1, f2 in files:
     delta = datetime.timedelta(days=1)
     date = str(datetime.datetime.now() + delta)
