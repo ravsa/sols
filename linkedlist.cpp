@@ -8,7 +8,7 @@ namespace singly{
         int data;
         node* next;
     };
-    class link 
+    class link
     {
         node* create_node(int value){
             node* temp = (node*)malloc(sizeof(node));
@@ -19,7 +19,7 @@ namespace singly{
         public:
         node *root;
         node *last;
-        link() { 
+        link() {
             root = NULL;
             last = NULL;
         }
@@ -45,7 +45,7 @@ namespace singly{
             while((temp)){
                 count++;
                 temp = temp->next;
-            } 
+            }
             return count;
         }
         void insert_rear(int value);
@@ -281,7 +281,7 @@ namespace doubly{
         public:
         node *root;
         node *last;
-        link() { 
+        link() {
             root = NULL;
             last = NULL;
         }
@@ -313,7 +313,7 @@ namespace doubly{
             while((temp)){
                 count++;
                 temp = temp->next;
-            } 
+            }
             return count;
         }
         void insert_rear(int value);
@@ -469,7 +469,7 @@ namespace doubly{
             std::swap(i->data, min->data);
         }
     }
-    
+
     int link::find_element(int element){
         node *temp = root;
         int count = 0;
@@ -488,7 +488,7 @@ namespace csingly{
         int data;
         node* next;
     };
-    class link 
+    class link
     {
         node* create_node(int value){
             node* temp = (node*)malloc(sizeof(node));
@@ -499,7 +499,7 @@ namespace csingly{
         public:
         node *root;
         node *last;
-        link() { 
+        link() {
             root = NULL;
             last = NULL;
         }
@@ -530,7 +530,7 @@ namespace csingly{
             while((temp->next != end)){
                 count++;
                 temp = temp->next;
-            } 
+            }
             return count;
         }
         void insert_rear(int value);
