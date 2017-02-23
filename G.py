@@ -13,7 +13,6 @@ for _ in xrange(int(raw_input())):
         hex_num = num[2:]
         hex_num = set(hex_num)
         temp = sum([data[int(i, 16)] for i in hex_num])
-        temp = sum([map(lambda x: math.pow(2, int(x, 16)), hex_num)])
         operation = int(num, 16) ^ temp
         if int(hex(l), 16) > operation:
             count += 1
