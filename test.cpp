@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace std; 
+using namespace std;
 void t(int n){
     if (n/2){
         cout << n << endl;
